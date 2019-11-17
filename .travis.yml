@@ -26,6 +26,6 @@ after_script:
 
 notifications:
   webhooks:
-    - https://esrl.dk/travis.php
+    - https://esrl.dk/travis_callback.php
   on_success: always # default: change0
   on_failure: always # default: always
