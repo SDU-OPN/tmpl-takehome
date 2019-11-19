@@ -15,14 +15,13 @@ before_script:
   - docker-compose up -d 
   - docker ps -a 
 
-#script: python ./tests/test.py
+script: python ./tests/test.py
 script:
   - node_modules/.bin/newman run https://esrl.dk/opn/opn_tests.json --insecure && ! wget --timeout 1 http://localhost:5000 && ! wget --timeout 1 http://localhost:3306
 
 
-#after_script:
+after_script:
   - docker-compose down
-
 
 
 notifications:
