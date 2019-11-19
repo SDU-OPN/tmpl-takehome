@@ -1,5 +1,3 @@
-sudo: required
-
 language: node_js
 
 services:
@@ -12,12 +10,10 @@ install:
   - npm install newman
 
 before_script:
-  - ls -lah
   - docker-compose pull
   - docker-compose build
   - docker-compose up -d 
-  - docker ps -a
-  - sleep 30  
+  - docker ps -a 
 
 #script: python ./tests/test.py
 script:
